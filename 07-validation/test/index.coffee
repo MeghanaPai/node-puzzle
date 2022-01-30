@@ -49,6 +49,29 @@ describe '07-validation', ->
       favouriteColour: '#ccccffx' # <--- problem
       interests: ["cycling", "programming"]
 
-  # !!!!!
-  # Add more tests for different data that users might try to provide!
-  # !!!!!
+  it 'should return `false` for invalid data: taxRate', ->
+    assert !validate
+      id: 10
+      name: 'John Doughlas'
+      email: 'footy@bar.com'
+      taxRate: 2 # <--- problem
+      favouriteColour: '#ff7'
+      interests: ["walking", "programming"]
+
+  it 'should return `false` for invalid data: interests', ->
+    assert !validate
+      id: 10
+      name: 'John Doughlas'
+      email: 'footy@bar.com'
+      taxRate: 0.3 
+      favouriteColour: '#ff6'
+      interests: ["walking", "programming", "hiking", "painting", "snowboarding"] # <--- problem
+
+  it 'should return `false` for invalid data: favouriteColour', ->
+    assert validate
+      id: 10
+      name: 'John Doughlas'
+      email: 'footy@bar.com'
+      taxRate: 0.3 
+      favouriteColour: '#abc'
+      interests: ["walking", "programming" ] 
