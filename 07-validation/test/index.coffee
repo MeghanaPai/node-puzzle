@@ -68,7 +68,7 @@ describe '07-validation', ->
       interests: ["walking", "programming", "hiking", "painting", "snowboarding"] # <--- problem
 
   it 'should return `false` for invalid data: favouriteColour', ->
-    assert validate
+    assert !validate
       id: 10
       name: 'John Doughlas'
       email: 'footy@bar.com'

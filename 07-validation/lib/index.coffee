@@ -13,7 +13,7 @@ schema = {
     name: {type: "string", maxLength: 63},
     email: {type: "string", maxLength: 255, format: "email"},
     taxRate: {type: "number", minimum:0, exclusiveMaximum: 1},
-    favouriteColour: {type: "string", regexp: {pattern: "/^#([0-9A-F]{3}){1,2}$/", flags: "i"} },
+    favouriteColour: {type: "string", regexp: { pattern: "/^#([0-9A-F]{3}){1,2}$/", flags: "i"} },
     interests: { type: "array", maxItems: 4, items: {type: "string", maxLength: 31 }}
     },
   required: [
